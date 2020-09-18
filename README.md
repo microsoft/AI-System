@@ -1,3 +1,104 @@
+# AI System
+
+This is an online AI System Course to help students learn the whole stack of AI System, and practice them in the real projects.
+
+## Background
+
+In recent years, the rapid development of artificial intelligence, especially deep learning technology, is inseparable from the continuous progress of hardware and software systems. In the foreseeable future, the development of artificial intelligence technology will still rely on a joint innovation model that combines computer systems and artificial intelligence. Computer systems are now empowering artificial intelligence with a larger scale and higher complexity. This requires not only more system innovation, but also systematic thinking and methodology. At the same time, artificial intelligence in turn provides support for the design of complex systems.
+
+We have noticed that most of the current artificial intelligence-related courses, especially deep learning and machine learning related courses, mainly focus on related theories, algorithms or applications, but system-related courses are rare. We hope that the course of artificial intelligence systems can make artificial intelligence related education more comprehensive and in-depth, so as to jointly promote the cultivation of talents that intersect artificial intelligence and systems.
+
+
+## Purpose
+
+This course aims to help students:
+
+1. Completely understand the computer system architecture that supports deep learning, and learn the system design under the full life cycle of deep learning through practical problems.
+
+2. Introduce cutting-edge systems and artificial intelligence research work, including AI for Systems and Systems for AI, to help senior undergraduates and graduate students better find and define meaningful research questions.
+
+3. Design experimental courses from the perspective of system research. Encourage students to implement and optimize system modules by operating and applying mainstream and latest frameworks, platforms and tools to improve their ability to solve practical problems, not just understanding the use of tools.
+
+**Prerequisites:** C/C++/Python, Computer Architecture, Introduction to algorithms
+
+## Characteristic
+
+The course mainly includes the following three modules:
+
+The first part is the basic knowledge of artificial intelligence and a full-stack overview of artificial intelligence systems; and the systematic design and methodology of deep learning systems. 
+
+The second part of the advanced courses includes the most cutting-edge systems and artificial intelligence research fields. 
+
+The third part is the supporting experimental courses, including the most mainstream frameworks, platforms and tools, and a series of experimental projects.
+
+The content of the first part will focus on basic knowledge, while the content of the other two parts will be dynamically adjusted with the technological progress of academia and industry. The content of the latter two parts will be organized in a modular form to facilitate adjustment or combination with other CS courses (such as compilation principles, etc.) as advanced lectures or internship projects.
+
+The design of this course will also draw on the research results and experience of Microsoft Research Asia in the intersection of artificial intelligence and systems, including some platforms and tools developed by Microsoft and the research institute. The course also encourages other schools and teachers to add and adjust more advanced topics or other experiments according to their needs.
+
+## Syllabus
+
+### Lectures
+
+Lectures have two parts--basic courses and advanced courses. The first part is focus on basic theories, from lesson 1 to 6, while the second part involves more cutting-edge research, from lesson 7 to 14.
+
+*Basic Courses*
+| | | |
+|---|---|---|
+| Course No.|Lecture Name|Remarks|
+|1|Introduction|Overview and system/AI basics|
+|2|System perspective of Systems for AI|Systems for AI: a historic view; Fundamentals of neural networks; Fundamentals of Systems for AI|
+|3|Computation frameworks for DNN|Backprop and AD, Tensor, DAG, Execution graph. <br>Papers and systems: PyTorch, TensorFlow|
+|4|Computer architecture for Matrix computation|Matrix computation, CPU/SIMD, GPGPU, ASIC/TPU <br>Papers and systems: Blas, TPU|
+|5|Distributed training algorithms|Data parallelism, model parallelism, distributed SGD <br>Papers and systems: PipeDream|
+|6|Distributed training systems|MPI, parameter servers, all-reduce, RDMA <br>Papers and systems: Horovod|
+|7|Scheduling and resource management system|Running dnn job on cluster: container, resource allocation, scheduling <br>Papers and systems: Kubeflow, OpenPAI,Gandiva, HiveD|
+|8|Inference systems|Efficiency, latency, throughput, and deployment <br>Papers and systems: TensorRT, TensorflowLite, ONNX|
+||||
+
+
+*Advanced Courses*
+| | | |
+|---|---|---|
+| Course No.|Course Name|Remarks|
+|9|Computation graph compilation and optimization|IR, sub-graph pattern match, Matrix multiplication and memory optimization <br>Papers and systems: XLA, MLIR, TVM, NNFusion|
+|10|Efficiency via compression and sparsity|Model compression, Sparsity, Pruning|
+|11|AutoML systems|Hyper parameter tuning, NAS <br>Papers and systems: Hyperband, SMAC, ENAS, AutoKeras, NNI|
+|12|Reinforcement learning systems|Theory of RL, systems for RL <br>Papers and systems: AC3, RLlib, AlphaZero|
+|13|Security and Privacy|Federated learning, security, privacy <br>Papers and systems: DeepFake|
+|14|AI for systems|AI for traditional systems problems, for system algorithms <br>Papers and systems: Learned Indexes, Learned query path|
+||||
+
+
+### Labs
+Labs also have two parts: The first part is configured to make sure students can run most of Labs at local machine. The advanced part may need a small cluster (local or on Cloud) with GPU support.
+
+*Basic Labs*
+||||
+|---|---|---|
+|Lab No.|Lab Name|Remarks|
+|Lab 1|A simple end-to-end AI example, <br>from a system perspective|Understand the systems from debug info and system logs
+|Lab 2|Customize operators|Design and implement a customized operator (both forward and backward) in python|
+|Lab 3|CUDA implementation|Add a CUDA implementation for the customized operator|
+|Lab 4|AllReduce implementation|Improve AllReduce on Horovod: implement a lossy compression (3LC) on GPU for low-bandwidth network|
+|Lab 5|Configure containers for customized training and inference|Configure containers|
+||||
+
+*Advanced Labs*
+||||
+|---|---|---|
+|Lab 6|Scheduling and resource management system|Get familiar with OpenPAI or KubeFlow|
+|Lab 7|Distributed training|Try different kinds of all reduce implementations|
+|Lab 8|AutoML|Search for a new neural network structure for Image/NLP tasks|
+|Lab 9|RL Systems|Configure and get familiar with one of the following RL Systems: RLlib, …|
+||||
+
+## appendix
+
+The following lists the relevant courses in the direction of artificial intelligence systems in other schools and institutions.
+
+\<TBD>
+
+---
 
 # Contributing
 
