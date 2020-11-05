@@ -1,8 +1,8 @@
-# AI System
+# AI-System
 
 [简体中文](./README_cn.md)
 
-This is an online AI System Course to help students learn the whole stack of AI System, and practice them in the real projects.
+This is an online AI System Course to help students learn the whole stack of systems that support AI, and practice them in the real projects. In this course, we will use terms **AI-System** and **System for AI** alternately. 
 
 ## Background
 
