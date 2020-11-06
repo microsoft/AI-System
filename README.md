@@ -39,7 +39,7 @@ The design of this course will also draw on the research results and experience 
 
 ## Syllabus
 
-### Lectures
+### [Lectures](./Lectures/README.md)
 
 Lectures have two parts--basic courses and advanced courses. The first part is focus on basic theories, from lesson 1 to 6, while the second part involves more cutting-edge research, from lesson 7 to 14.
 
@@ -71,13 +71,13 @@ Lectures have two parts--basic courses and advanced courses. The first part is f
 ||||
 
 
-### Labs
+### [Labs](./Labs/README.md)
 Labs also have two parts: The first part is configured to make sure students can run most of Labs at local machine. The advanced part may need a small cluster (local or on Cloud) with GPU support.
 
 *Basic Labs*
 ||||
 |---|---|---|
-|Lab No.|Lab Name|Remarks|
+|<div style="width:50px">Lab No.</div>|Lab Name|Remarks|
 |Lab 1|A simple end-to-end AI example, <br>from a system perspective|Understand the systems from debug info and system logs
 |Lab 2|Customize operators|Design and implement a customized operator (both forward and backward) in python|
 |Lab 3|CUDA implementation|Add a CUDA implementation for the customized operator|
@@ -88,6 +88,7 @@ Labs also have two parts: The first part is configured to make sure students can
 *Advanced Labs*
 ||||
 |---|---|---|
+|<div style="width:50px">Lab No.</div>|Lab Name|Remarks|
 |Lab 6|Scheduling and resource management system|Get familiar with OpenPAI or KubeFlow|
 |Lab 7|Distributed training|Try different kinds of all reduce implementations|
 |Lab 8|AutoML|Search for a new neural network structure for Image/NLP tasks|
