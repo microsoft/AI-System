@@ -39,7 +39,7 @@ The design of this course will also draw on the research results and experience 
 
 ## Syllabus
 
-### Lectures
+### [Lectures](./lectures/README.md)
 
 Lectures have two parts--basic courses and advanced courses. The first part is focus on basic theories, from lesson 1 to 6, while the second part involves more cutting-edge research, from lesson 7 to 14.
 
@@ -71,7 +71,7 @@ Lectures have two parts--basic courses and advanced courses. The first part is f
 ||||
 
 
-### Labs
+### [Labs](./labs/README.md)
 Labs also have two parts: The first part is configured to make sure students can run most of Labs at local machine. The advanced part may need a small cluster (local or on Cloud) with GPU support.
 
 *Basic Labs*

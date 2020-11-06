@@ -16,7 +16,7 @@ In advanced lectures, we introduced cutting-edge systems and artificial intellig
 |3|[Computation frameworks for DNN](/docs/SystemforAI-3-Framework.pdf)|Backprop and AD, Tensor, DAG, Execution graph. <br>Papers and systems: PyTorch, TensorFlow|[PPT](./BasicTopics/SystemforAI-3-Framework.pptx)|
 |4|[Computer architecture for Matrix computation](/docs/SystemforAI-4-Computer%20architecture%20for%20Matrix%20computation.pdf)|Matrix computation, CPU/SIMD, GPGPU, ASIC/TPU <br>Papers and systems: Blas, TPU|[PPT](./BasicTopics/SystemforAI-4-Computer%20architecture%20for%20Matrix%20computation.pptx)|
 |5|[Distributed training algorithms](/docs/SystemforAI-5-DistributedAlgo.pdf)|Data parallelism, model parallelism, distributed SGD <br>Papers and systems: PipeDream|[PPT](./BasicTopics/SystemforAI-5-DistributedAlgo.pptx)|
-|6|Distributed training systems|MPI, parameter servers, all-reduce, RDMA <br>Papers and systems: Horovod|[PPT](./BasicTopics/SystemforAI-6-DistributedSys.pptx)|
+|6|[Distributed training systems](/docs/SystemforAI-6-DistributedSys.pdf)|MPI, parameter servers, all-reduce, RDMA <br>Papers and systems: Horovod|[PPT](./BasicTopics/SystemforAI-6-DistributedSys.pptx)|
 |7|[Scheduling and resource management system](/docs/SystemforAI-7-Platform.pdf)|Running dnn job on cluster: container, resource allocation, scheduling <br>Papers and systems: Kubeflow, OpenPAI,Gandiva, HiveD|[PPT](./BasicTopics/SystemforAI-7-Platform.pptx)|
 |8|[Inference systems](/docs/SystemforAI-8-Inference.pdf)|Efficiency, latency, throughput, and deployment <br>Papers and systems: TensorRT, TensorflowLite, ONNX|[PPT](./BasicTopics/SystemforAI-8-Inference.pptx)|
 ||||
