@@ -77,7 +77,7 @@ Labs also have two parts: The first part is configured to make sure students can
 *Basic Labs*
 ||||
 |---|---|---|
-|Lab No.|Lab Name|Remarks|
+|<div style="width:50px">Lab No.</div>|Lab Name|Remarks|
 |Lab 1|A simple end-to-end AI example, <br>from a system perspective|Understand the systems from debug info and system logs
 |Lab 2|Customize operators|Design and implement a customized operator (both forward and backward) in python|
 |Lab 3|CUDA implementation|Add a CUDA implementation for the customized operator|
@@ -88,6 +88,7 @@ Labs also have two parts: The first part is configured to make sure students can
 *Advanced Labs*
 ||||
 |---|---|---|
+|<div style="width:50px">Lab No.</div>|Lab Name|Remarks|
 |Lab 6|Scheduling and resource management system|Get familiar with OpenPAI or KubeFlow|
 |Lab 7|Distributed training|Try different kinds of all reduce implementations|
 |Lab 8|AutoML|Search for a new neural network structure for Image/NLP tasks|
