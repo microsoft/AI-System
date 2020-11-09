@@ -23,7 +23,7 @@
 
 ### 实验流程图
 
-<img src="/imgs/Lab1-flow.png" alt="Lab1 flow chat">
+<img src="/imgs/Lab1-flow.png" alt="Lab1 flow chat" />
 
 ### 具体步骤
 
