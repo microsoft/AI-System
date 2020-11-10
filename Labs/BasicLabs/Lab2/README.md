@@ -7,7 +7,7 @@
 
 ## 实验环境
 
-PyTorch==1.5.0
+* PyTorch==1.5.0
 
 ## 实验原理
 
@@ -19,10 +19,7 @@ PyTorch==1.5.0
 
 ### 实验流程图
 
-<figure>
-    <img src="/imgs/Lab2-flow.png" alt="Lab2 flow chat" />
-    <figcaption>Lab2 flow chat</figcaption>
-</figure>
+![](/imgs/Lab2-flow.png "Lab2 flow chat")
 
 ### 具体步骤
 
@@ -86,7 +83,7 @@ PyTorch==1.5.0
 2.	基于C++ API实现定制化张量运算Linear
 
     代码位置：`Lab2/mnist_custom_linear_cpp.py`
-    
+
     运行命令：
     ```
     cd mylinear_cpp_extension
@@ -97,4 +94,4 @@ PyTorch==1.5.0
 
 ## 参考资料
 
-* [EXTENDING PYTORCH](https://pytorch.org/docs/master/notes/extending.html)
+* EXTENDING PYTORCH: https://pytorch.org/docs/master/notes/extending.html
