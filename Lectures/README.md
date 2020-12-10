@@ -10,7 +10,7 @@ In advanced lectures, we introduced cutting-edge systems and artificial intellig
 
 | | | | |
 |---|---|---|---|
-| Course No.|Lecture Name|Remarks|Download|
+| Course No.|Lecture Name|Remarks|<!--Download-->|
 |1|[Introduction](/docs/SystemforAI-1-2-Introduction%20and%20System%20Perspective.pdf)|Overview and system/AI basics|<!--[PPT](./BasicTopics/SystemforAI-1-2-Introduction%20and%20System%20Perspective.pptx)-->|
 |2|[System perspective of Systems for AI](/docs/SystemforAI-1-2-Introduction%20and%20System%20Perspective.pdf)|Systems for AI: a historic view; Fundamentals of neural networks; Fundamentals of Systems for AI|<!--[PPT](./BasicTopics/SystemforAI-1-2-Introduction%20and%20System%20Perspective.pptx)-->|
 |3|[Computation frameworks for DNN](/docs/SystemforAI-3-Framework.pdf)|Backprop and AD, Tensor, DAG, Execution graph. <br>Papers and systems: PyTorch, TensorFlow|<!--[PPT](./BasicTopics/SystemforAI-3-Framework.pptx)-->|
@@ -25,7 +25,7 @@ In advanced lectures, we introduced cutting-edge systems and artificial intellig
 
 | | | | |
 |---|---|---|---|
-| Course No.|Course Name|Remarks|Download|
+| Course No.|Course Name|Remarks|<!--Download-->|
 |9|[Computation graph compilation and optimization](/docs/SystemforAI-9-Compilation%20and%20Optimization.pdf)|IR, sub-graph pattern match, Matrix multiplication and memory optimization <br>Papers and systems: XLA, MLIR, TVM, NNFusion|<!--[PPT](./AdvancedTopics/SystemforAI-9-Compilation%20and%20Optimization.pptx)-->|
 |10|[Efficiency via compression and sparsity](/docs/SystemforAI-10-Efficiency%20via%20Compression%20and%20Sparsity.pdf)|Model compression, Sparsity, Pruning|<!--[PPT](./AdvancedTopics/SystemforAI-10-Efficiency%20via%20Compression%20and%20Sparsity.pptx)-->|
 |11|[AutoML systems](/docs/SystemforAI-11-AutoML.pdf)|Hyper parameter tuning, NAS <br>Papers and systems: Hyperband, SMAC, ENAS, AutoKeras, NNI|<!--[PPT](./AdvancedTopics/SystemforAI-11-AutoML.pptx)-->|
