@@ -1,107 +1,108 @@
-# AI-System
+# 人工智能系统
 
-[简体中文](./README_cn.md)
+[English](./README_en.md)
 
-This is an online AI System Course to help students learn the whole stack of systems that support AI, and practice them in the real projects. In this course, we will use terms **AI-System** and **System for AI** alternately. 
+本课程的中文名称设定为 **人工智能系统**，主要讲解支持人工智能的计算机系统设计，对应的英文课程名称为 **System for AI**。本课程中将交替使用一下词汇：**人工智能系统**，**AI-System** 和 **System for AI**。
 
-## Background
+本课程为[微软人工智能教育与共建社区](https://github.com/microsoft/ai-edu)中规划的人工智能相关教程之一，在[A-基础教程](https://github.com/microsoft/ai-edu/tree/master/A-%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B)模块下，课程编号和名称为 *A6-人工智能系统*。
 
-In recent years, the rapid development of artificial intelligence, especially deep learning technology, is inseparable from the continuous progress of hardware and software systems. In the foreseeable future, the development of artificial intelligence technology will still rely on a joint innovation model that combines computer systems and artificial intelligence. Computer systems are now empowering artificial intelligence with a larger scale and higher complexity. This requires not only more system innovation, but also systematic thinking and methodology. At the same time, artificial intelligence in turn provides support for the design of complex systems.
+欢迎访问[微软人工智能教育与共建社区](https://github.com/microsoft/ai-edu)的[A-基础教程](https://github.com/microsoft/ai-edu/tree/master/A-%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B)模块访问更多相关内容。
 
-We have noticed that most of the current artificial intelligence-related courses, especially deep learning and machine learning related courses, mainly focus on related theories, algorithms or applications, but system-related courses are rare. We hope that the course of artificial intelligence systems can make artificial intelligence related education more comprehensive and in-depth, so as to jointly promote the cultivation of talents that intersect artificial intelligence and systems.
-
-
-## Purpose
-
-This course aims to help students:
-
-1. Completely understand the computer system architecture that supports deep learning, and learn the system design under the full life cycle of deep learning through practical problems.
-
-2. Introduce cutting-edge systems and artificial intelligence research work, including AI for Systems and Systems for AI, to help senior undergraduates and graduate students better find and define meaningful research questions.
-
-3. Design experimental courses from the perspective of system research. Encourage students to implement and optimize system modules by operating and applying mainstream and latest frameworks, platforms and tools to improve their ability to solve practical problems, not just understanding the use of tools.
-
-**Prerequisites:** C/C++/Python, Computer Architecture, Introduction to algorithms
-
-## Characteristic
-
-The course mainly includes the following three modules:
-
-The first part is the basic knowledge of artificial intelligence and a full-stack overview of artificial intelligence systems; and the systematic design and methodology of deep learning systems. 
-
-The second part of the advanced courses includes the most cutting-edge systems and artificial intelligence research fields. 
-
-The third part is the supporting experimental courses, including the most mainstream frameworks, platforms and tools, and a series of experimental projects.
-
-The content of the first part will focus on basic knowledge, while the content of the other two parts will be dynamically adjusted with the technological progress of academia and industry. The content of the latter two parts will be organized in a modular form to facilitate adjustment or combination with other CS courses (such as compilation principles, etc.) as advanced lectures or internship projects.
-
-The design of this course will also draw on the research results and experience of Microsoft Research Asia in the intersection of artificial intelligence and systems, including some platforms and tools developed by Microsoft and the research institute. The course also encourages other schools and teachers to add and adjust more advanced topics or other experiments according to their needs.
-
-## Syllabus
-
-### [Lectures](./Lectures)
-
-Lectures have two parts--basic courses and advanced courses. The first part is focus on basic theories, from lesson 1 to 6, while the second part involves more cutting-edge research, from lesson 7 to 14.
-
-*Basic Courses*
-| | | |
-|---|---|---|
-| Course No.|Lecture Name|Remarks|
-|1|Introduction|Overview and system/AI basics|
-|2|System perspective of Systems for AI|Systems for AI: a historic view; Fundamentals of neural networks; Fundamentals of Systems for AI|
-|3|Computation frameworks for DNN|Backprop and AD, Tensor, DAG, Execution graph. <br>Papers and systems: PyTorch, TensorFlow|
-|4|Computer architecture for Matrix computation|Matrix computation, CPU/SIMD, GPGPU, ASIC/TPU <br>Papers and systems: Blas, TPU|
-|5|Distributed training algorithms|Data parallelism, model parallelism, distributed SGD <br>Papers and systems: PipeDream|
-|6|Distributed training systems|MPI, parameter servers, all-reduce, RDMA <br>Papers and systems: Horovod|
-|7|Scheduling and resource management system|Running dnn job on cluster: container, resource allocation, scheduling <br>Papers and systems: Kubeflow, OpenPAI,Gandiva, HiveD|
-|8|Inference systems|Efficiency, latency, throughput, and deployment <br>Papers and systems: TensorRT, TensorflowLite, ONNX|
-||||
+强烈推荐想学习或巩固人工智能核心知识的学习者，先学习[A2-神经网络基本原理简明教程](https://aka.ms/beginnerAI)，也称**9步学习法**。会对本课程的学习带来很大的帮助。
 
 
-*Advanced Courses*
-| | | |
-|---|---|---|
-| Course No.|Course Name|Remarks|
-|9|Computation graph compilation and optimization|IR, sub-graph pattern match, Matrix multiplication and memory optimization <br>Papers and systems: XLA, MLIR, TVM, NNFusion|
-|10|Efficiency via compression and sparsity|Model compression, Sparsity, Pruning|
-|11|AutoML systems|Hyper parameter tuning, NAS <br>Papers and systems: Hyperband, SMAC, ENAS, AutoKeras, NNI|
-|12|Reinforcement learning systems|Theory of RL, systems for RL <br>Papers and systems: AC3, RLlib, AlphaZero|
-|13|Security and Privacy|Federated learning, security, privacy <br>Papers and systems: DeepFake|
-|14|AI for systems|AI for traditional systems problems, for system algorithms <br>Papers and systems: Learned Indexes, Learned query path|
-||||
+## 人工智能系统课程设立背景
+
+近年来人工智能特别是深度学习技术得到了飞速发展，这背后离不开计算机硬件和软件系统的不断进步。在可见的未来，人工智能技术的发展仍将依赖于计算机系统和人工智能相结合的共同创新模式。需要注意的是，计算机系统现在正以更大的规模和更高的复杂性来赋能于人工智能，这背后不仅需要更多的系统上的创新，更需要系统性的思维和方法论。与此同时，人工智能也反过来为设计复杂系统提供支持。
+
+我们注意到，现在的大部分人工智能相关的课程，特别是深度学习和机器学习相关课程主要集中在相关理论、算法或者应用，与系统相关的课程并不多见。我们希望人工智能系统这门课能让人工智能相关教育变得更加全面和深入，以共同促进人工智能与系统交叉人才的培养。
 
 
-### [Labs](./Labs)
-Labs also have two parts: The first part is configured to make sure students can run most of Labs at local machine. The advanced part may need a small cluster (local or on Cloud) with GPU support.
+## 人工智能系统课程设立目的
 
-*Basic Labs*
+本课程主要为本科生高年级和研究生设计，帮助学生：
+
+1. 完整的了解支持深度学习的计算机系统架构，并通过实际的问题，来学习深度学习完整生命周期下的系统设计。
+ 
+2. 介绍前沿的系统和人工智能相结合的研究工作，包括AI for Systems and Systems for AI，以帮助高年级的本科生和研究生更好的寻找和定义有意义的研究问题。
+
+3. 从系统研究的角度出发设计实验课程。通过操作和应用主流和最新的框架、平台和工具来鼓励学生动手实现和优化系统模块，以提高解决实际问题的能力，而不仅仅是了解工具使用。
+
+**先修课程:** C/C++/Python, 计算机体系结构，算法导论
+
+
+## 人工智能系统课程的设计与特点
+
+课程主要包括以下三大模块：
+
+第一部分，是人工智能的基础知识和人工智能系统的全栈概述；以及深度学习系统的系统性设计和方法学。
+
+第二部分，为高级课程，包括最前沿的系统和人工智能交叉的研究领域。
+
+第三部分，是与之配套的实验课程，包括最主流的框架、平台和工具，以及一系列的实验项目。
+
+第一部分的内容将集中在基础知识，而其他两部分的内容将随着学术界和工业界的技术进步而动态调整。后两部分的内容将以模块化的形式组织，以利于调整或与其他CS的课程（比如编译原理等）相结合，作为高级讲义或者实习项目。
+
+本课程的设计也会借助微软亚洲研究院在人工智能和系统交叉领域的研究成果和经验，其中包括微软及研究院开发的一部分平台和工具。课程也鼓励其他学校和老师根据自己的需求添加和调整更多的高级课题，或者其他的实验。
+
+
+## 人工智能系统课程大纲
+
+### [课程部分](./Lectures)
+
+*基础课程*
 ||||
 |---|---|---|
-|<div style="width:50px">Lab No.</div>|Lab Name|Remarks|
-|Lab 1|A simple end-to-end AI example, <br>from a system perspective|Understand the systems from debug info and system logs
-|Lab 2|Customize operators|Design and implement a customized operator (both forward and backward) in python|
-|Lab 3|CUDA implementation|Add a CUDA implementation for the customized operator|
-|Lab 4|AllReduce implementation|Improve AllReduce on Horovod: implement a lossy compression (3LC) on GPU for low-bandwidth network|
-|Lab 5|Configure containers for customized training and inference|Configure containers|
+|课程编号|讲义名称|备注|
+|1|课程介绍|课程概述和系统/AI基础|
+|2|人工智能系统概述|人工智能系统发展历史，神经网络基础，人工智能系统基础|
+|3|深度神经网络计算框架基础|反向传播和自动求导，张量，有向无环图，执行图 <br>论文和系统：PyTorch, TensorFlow|
+|4|矩阵运算与计算机体系结构|矩阵运算，CPU/SIMD, GPGPU, ASIC/TPU <br>论文和系统：Blas, TPU|
+|5|分布式训练算法|数据并行，模型并行，分布式SGD <br>论文和系统：PipeDream|
+|6|分布式训练系统|MPI, parameter servers, all-reduce, RDMA <br>论文和系统: Horovod|
+|7|异构计算集群调度与资源管理系统|集群上运行DNN任务：容器，资源分配，调度 <br>论文和系统：Kubeflow, OpenPAI, Gandiva, HiveD|
+|8|深度学习推导系统|效率，延迟，吞吐量，部署 <br>论文和系统：TensorRT, TensorflowLite, ONNX|
 ||||
 
-*Advanced Labs*
+*高阶课程*
 ||||
 |---|---|---|
-|<div style="width:50px">Lab No.</div>|Lab Name|Remarks|
-|Lab 6|Scheduling and resource management system|Get familiar with OpenPAI or KubeFlow|
-|Lab 7|Distributed training|Try different kinds of all reduce implementations|
-|Lab 8|AutoML|Search for a new neural network structure for Image/NLP tasks|
-|Lab 9|RL Systems|Configure and get familiar with one of the following RL Systems: RLlib, …|
+|课程编号|讲义名称|备注|
+|9|计算图的编译与优化|IR，子图模式匹配，矩阵乘和内存优化 <br>论文和系统：XLA, MLIR, TVM, NNFusion|
+|10|神经网络的压缩与稀疏化优化|模型压缩，稀疏化，剪枝|
+|11|自动机器学习系统|超参调优，神经网络结构搜索（NAS）<br>论文和系统：Hyperband, SMAC, ENAX, AutoKeras, NNI|
+|12|强化学习系统|RL理论，RL系统 <br>论文和系统：AC3, RLlib, AlphaZero|
+|13|安全与隐私|联邦学习，安全，隐私 <br>论文和系统：DeepFake|
+|14|利用人工智能来优化计算机系统问题|AI用于传统系统问题，AI用于系统算法 <br>论文和系统：Learned Indexes, Learned query path|
 ||||
 
-## appendix
 
-The following lists the relevant courses in the direction of artificial intelligence systems in other schools and institutions.
+### [实验部分](./Labs)
+
+*基础实验*
+||||
+|---|---|---|
+|实验编号|实验名称|备注|
+|实验 1|框架及工具入门示例|
+|实验 2|定制一个新的张量运算|
+|实验 3|CUDA实现和优化|
+|实验 4|AllReduce的实现或优化|
+|实验 5|配置Container来进行云上训练或推理准备|
+||||
+
+*高阶实验*
+||||
+|---|---|---|
+|实验 6|学习使用调度管理系统|
+|实验 7|分布式训练任务练习|
+|实验 8|自动机器学习系统练习|
+|实验 9|强化学习系统练习|
+||||
+
+## 附录
 
 \<TBD>
 
----
 
 # Contributing
 
