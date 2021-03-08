@@ -28,8 +28,6 @@
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# This file has been changed for education and teaching purpose
-
 from __future__ import print_function
 import argparse
 import torch
@@ -39,42 +37,10 @@ import torch.optim as optim
 from torchvision import datasets, transforms
 from torch.optim.lr_scheduler import StepLR
 
-#import our cuda module
-#import mylinear_cpp
-import mylinear_cuda
-
-class myLinearFunction(torch.autograd.Function):
-    # Note that both forward and backward are @staticmethods
-    @staticmethod
-    def forward(ctx, input, weight):
-        ctx.save_for_backward(input, weight)
-        #output = input.mm(weight.t())
-        #output = mylinear_cpp.forward(input, weight)
-        output = mylinear_cuda.forward(input, weight)
-
-        return output[0]
-        
-    @staticmethod
-    def backward(ctx, grad_output):
-        input, weight = ctx.saved_tensors
-        #grad_input = grad_weight = None
-        #grad_input = grad_output.mm(weight)
-        #grad_weight = grad_output.t().mm(input)
-        #grad_input, grad_weight = mylinear_cpp.backward(grad_output, input, weight)
-        grad_input, grad_weight = mylinear_cuda.backward(grad_output, input, weight)
-
-        return grad_input, grad_weight
-
-class myLinear(nn.Module):
-    def __init__(self, input_features, output_features):
-        super(myLinear, self).__init__()
-        self.input_features = input_features
-        self.output_features = output_features
-        self.weight = nn.Parameter(torch.Tensor(output_features, input_features))
-        self.weight.data.uniform_(-0.1, 0.1)
-    
-    def forward(self, input):
-        return myLinearFunction.apply(input, self.weight)
+from six.moves import urllib
+opener = urllib.request.build_opener()
+opener.addheaders = [('User-agent', 'Mozilla/5.0')]
+urllib.request.install_opener(opener)
 
 class Net(nn.Module):
     def __init__(self):
@@ -84,8 +50,7 @@ class Net(nn.Module):
         self.dropout1 = nn.Dropout2d(0.25)
         self.dropout2 = nn.Dropout2d(0.5)
         self.fc1 = nn.Linear(9216, 128)
-        # self.fc2 = nn.Linear(128, 10)
-        self.fc2 = myLinear(128, 10)
+        self.fc2 = nn.Linear(128, 10)
 
     def forward(self, x):
         x = self.conv1(x)
