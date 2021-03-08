@@ -1,7 +1,7 @@
 # Docker部署PyTorch推理程序
 ## 创建TorchServe镜像
 
-### 准备TorchServe源码:
+#### 准备TorchServe源码:
 ```bash
 # $BRANCH_NAME可以指定需要使用的版本
 $ BRANCH_NAME=v0.1.0
@@ -160,29 +160,24 @@ $ docker container stop <containerid>
 
 Container ID可以通过`docker ps`命令查询。
 
-<!-- #### 注意事项：
 
-If you are hosting web-server inside your container then explicitly specify the ip/host as 0.0.0.0 for your web-server
-For details, refer : https://docs.docker.com/v17.09/engine/userguide/networking/default_network/binding/#related-information -->
-
-
-##### 部署模型，进行推理
+## 部署模型，进行推理
 
 使用TorchServe推理，第一步需要把模型使用model archiver归档为MAR文件，
 
-1. 进入容器
+#### 进入容器
 
 ```
 $ docker exec -it <containerid> /bin/bash
 ```
 
-2. 创建或进入保存模型的文件夹.
+#### 创建或进入保存模型的文件夹
 
  ```bash
  $ cd /home/model-server/model-store
  ```
 
-3. 下载一个模型.
+#### 下载一个模型
 
  ```bash
  $ apt-get update  
@@ -195,7 +190,7 @@ $ docker exec -it <containerid> /bin/bash
  20xx-0x-0x 05:13:05 (84.6 MB/s) - 'densenet161-8d451a50.pth' saved [115730790/115730790]
  ```
 
-4. 使用model archiver进行模型归档. The `extra-files` param uses fa file from the `TorchServe` repo, so update the path if necessary.
+#### 使用model archiver进行模型归档
 
 安装：
  ```
@@ -213,7 +208,7 @@ $ docker exec -it <containerid> /bin/bash
  densenet161-8d451a50.pth  densenet161.mar
  ```
 
-5. 启动TorchServe进行推理模型
+#### 启动TorchServe进行推理模型
 
 当已经归档和存储了模型，使用`torchserve`命令进行模型推理。
 关闭之前的如果已经启动的TorchServe
@@ -245,7 +240,7 @@ e89a,timestamp:1591593790
 2020-06-08 05:23:10,362 [INFO ] W-9006-densenet161_1.0 TS_METRICS - W-9006-densenet161_1.0.ms:6832|#Level:Host|#hostname:7d3f0e9be89a,timestamp:1591593790
 ```
 
-6. 使用模型进行推理
+#### 使用模型进行推理
 
 为了测试模型服务，发送请求到服务器的`predictions` API.
 
@@ -289,6 +284,6 @@ $ curl -X POST http://127.0.0.1:8080/predictions/densenet161 -T kitten.jpg
 
 
 
-#### 本节作业
+## 本节作业
 
 请同学参考以上步骤，进行自己的模型的服务部署，并返回推理请求的结果截图。
