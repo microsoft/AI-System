@@ -85,7 +85,7 @@ Successfully tagged train_dl:latest
 
 ## 启动所构建镜像的容器实例
 
-- 当前你的代码已经打包进镜像，并保存在本地机器。让我们通过下面的命令尝试启动它 `docker run --name training --rm train_dl`
+- 当前你的代码已经打包进镜像，并保存在本地机器。让我们通过下面的命令尝试启动它 `docker run --name training train_dl`
 
 成功会观察到日志：
 

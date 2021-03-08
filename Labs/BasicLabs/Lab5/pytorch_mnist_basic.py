@@ -23,7 +23,7 @@ import torch.nn.functional as F
 import torch.optim as optim
 from torchvision import datasets, transforms
 import torch.utils.data.distributed
-import horovod.torch as hvd
+# import horovod.torch as hvd
 
 # Training settings
 parser = argparse.ArgumentParser(description='PyTorch MNIST Example')
@@ -48,9 +48,9 @@ parser.add_argument('--fp16-allreduce', action='store_true', default=False,
 parser.add_argument('--use-adasum', action='store_true', default=False,
                     help='use adasum algorithm to do reduction')
 
-# set argument to specified if use horovod
-parser.add_argument('--hvd', type=bool, default=False,
-                    help='enable horovod')
+# # set argument to specified if use horovod
+# parser.add_argument('--hvd', type=bool, default=False,
+#                     help='enable horovod')
 
 
 class Net(nn.Module):
@@ -92,10 +92,10 @@ def train(epoch):
                 100. * batch_idx / len(train_loader), loss.item()))
 
 
-def metric_average(val, name):
-    tensor = torch.tensor(val)
-    avg_tensor = hvd.allreduce(tensor, name=name)
-    return avg_tensor.item()
+# def metric_average(val, name):
+#     tensor = torch.tensor(val)
+#     avg_tensor = hvd.allreduce(tensor, name=name)
+#     return avg_tensor.item()
 
 
 def test():
@@ -118,14 +118,14 @@ def test():
     test_accuracy /= len(test_sampler)
 
     # Horovod: average metric values across workers.
-    if args.hvd:
-        test_loss = metric_average(test_loss, 'avg_loss')
-        test_accuracy = metric_average(test_accuracy, 'avg_accuracy')
+    # if args.hvd:
+    #     test_loss = metric_average(test_loss, 'avg_loss')
+    #     test_accuracy = metric_average(test_accuracy, 'avg_accuracy')
 
     # Horovod: print output only on first rank.
-        if hvd.rank() == 0:
-            print('\nTest set: Average loss: {:.4f}, Accuracy: {:.2f}%\n'.format(
-                test_loss, 100. * test_accuracy))
+        # if hvd.rank() == 0:
+        #     print('\nTest set: Average loss: {:.4f}, Accuracy: {:.2f}%\n'.format(
+        #         test_loss, 100. * test_accuracy))
 
 
 if __name__ == '__main__':
@@ -133,19 +133,19 @@ if __name__ == '__main__':
     args.cuda = not args.no_cuda and torch.cuda.is_available()
 
     # Horovod: initialize library.
-    hvd.init()
+    # hvd.init()
     torch.manual_seed(args.seed)
 
-    if args.hvd:
-        local_rank = hvd.local_rank()
-        rank = hvd.rank()
-        local_size = hvd.local_size()
-        size = hvd.size()
-    else:
-        local_rank = 0
-        rank = 0
-        local_size = 1
-        size = 1
+    # if args.hvd:
+    #     local_rank = hvd.local_rank()
+    #     rank = hvd.rank()
+    #     local_size = hvd.local_size()
+    #     size = hvd.size()
+    # else:
+    local_rank = 0
+    rank = 0
+    local_size = 1
+    size = 1
 
     if args.cuda:
         # Horovod: pin GPU to local rank.
@@ -203,18 +203,18 @@ if __name__ == '__main__':
                           momentum=args.momentum)
 
     # Horovod: broadcast parameters & optimizer state.
-    if args.hvd:
-        hvd.broadcast_parameters(model.state_dict(), root_rank=0)
-        hvd.broadcast_optimizer_state(optimizer, root_rank=0)
+    # if args.hvd:
+    #     hvd.broadcast_parameters(model.state_dict(), root_rank=0)
+    #     hvd.broadcast_optimizer_state(optimizer, root_rank=0)
 
-        # Horovod: (optional) compression algorithm.
-        compression = hvd.Compression.fp16 if args.fp16_allreduce else hvd.Compression.none
+    #     # Horovod: (optional) compression algorithm.
+    #     compression = hvd.Compression.fp16 if args.fp16_allreduce else hvd.Compression.none
 
-        # Horovod: wrap optimizer with DistributedOptimizer.
-        optimizer = hvd.DistributedOptimizer(optimizer,
-                                             named_parameters=model.named_parameters(),
-                                             compression=compression,
-                                             op=hvd.Adasum if args.use_adasum else hvd.Average)
+    #     # Horovod: wrap optimizer with DistributedOptimizer.
+    #     optimizer = hvd.DistributedOptimizer(optimizer,
+    #                                          named_parameters=model.named_parameters(),
+    #                                          compression=compression,
+    #                                          op=hvd.Adasum if args.use_adasum else hvd.Average)
 
     for epoch in range(1, args.epochs + 1):
         train(epoch)
