@@ -46,10 +46,35 @@ Successfully tagged torchserve:0.1-gpu
 $ docker run --rm -it -p 8080:8080 -p 8081:8081 torchserve:0.1-cpu
 ```
 
-启动结果，进入控制台：
+启动后，会看到日志：
 
 ```
-root@d73100253567:/#
+TS Home: /usr/local/lib/python3.6/dist-packages
+Current directory: /home/model-server
+Temp directory: /home/model-server/tmp
+Number of GPUs: 0
+Number of CPUs: 12
+Max heap size: 28200 M
+Python executable: /usr/bin/python3
+Config file: /home/model-server/config.properties
+Inference address: http://0.0.0.0:8080
+Management address: http://0.0.0.0:8081
+Model Store: /home/model-server/model-store
+Initial Models: N/A
+Log dir: /home/model-server/logs
+Metrics dir: /home/model-server/logs
+Netty threads: 32
+Netty client threads: 0
+Default workers per model: 12
+Blacklist Regex: N/A
+Maximum Response Size: 6553500
+Maximum Request Size: 6553500
+2021-03-08 13:41:40,625 [INFO ] main org.pytorch.serve.ModelServer - Initialize Inference server with: EpollServerSocketChannel.
+2021-03-08 13:41:40,690 [INFO ] main org.pytorch.serve.ModelServer - Inference API bind to: http://0.0.0.0:8080
+2021-03-08 13:41:40,690 [INFO ] main org.pytorch.serve.ModelServer - Initialize Management server with: EpollServerSocketChannel.
+2021-03-08 13:41:40,691 [INFO ] main org.pytorch.serve.ModelServer - Management API bind to: http://0.0.0.0:8081
+Model server started.
+...
 ```
 
 如果想使用官方最新版本的镜像，你可以使用`latest`标签:
@@ -72,9 +97,9 @@ $ docker run --rm -it --gpus all -p 8080:8080 -p 8081:8081 pytorch/torchserve:0.
 $ docker run --rm -it --gpus all -p 8080:8080 -p 8081:8081 pytorch/torchserve:latest-gpu
 ```
 
-#### 容器内部访问TorchServe APIs
+#### 在相同主机，访问TorchServe APIs
 
-TorchServe的推理和管理APIs可以通过主机的8080和8081端口访问。例如：
+在相同主机开启新的会话，TorchServe的推理和管理APIs可以通过主机的8080和8081端口访问。例如：
 
 ```bash
 # 访问服务
@@ -116,14 +141,6 @@ $ docker exec -it <containerid> /bin/bash
 root@7d3f0e9be89a:/home/model-server#
 ```
 
-#### 停止TorchServe容器
-
-```bash
-$ docker container stop <containerid>
-```
-
-Container ID可以通过`docker ps`命令查询。
-
 #### 检查容器的端口映射
 
 ```bash
@@ -135,17 +152,21 @@ $ docker port <containerid>
 8081/tcp -> 0.0.0.0:8081
 8080/tcp -> 0.0.0.0:8080
 ```
-#### 重要提示：
+#### 停止TorchServe容器
+
+```bash
+$ docker container stop <containerid>
+```
+
+Container ID可以通过`docker ps`命令查询。
+
+<!-- #### 注意事项：
 
 If you are hosting web-server inside your container then explicitly specify the ip/host as 0.0.0.0 for your web-server
-For details, refer : https://docs.docker.com/v17.09/engine/userguide/networking/default_network/binding/#related-information
+For details, refer : https://docs.docker.com/v17.09/engine/userguide/networking/default_network/binding/#related-information -->
 
-#### 本节作业
 
-* 参考以上方式，通过容器创建之前训练模型的推理服务
-
-参考实例：
-##### 保存一个模型
+##### 部署模型，进行推理
 
 使用TorchServe推理，第一步需要把模型使用model archiver归档为MAR文件，
 
@@ -155,58 +176,58 @@ For details, refer : https://docs.docker.com/v17.09/engine/userguide/networking/
 $ docker exec -it <containerid> /bin/bash
 ```
 
-1. 创建或进入保存模型的文件夹.
+2. 创建或进入保存模型的文件夹.
 
-    ```bash
-    $ cd /home/model-server/model-store
-    $ mkdir model-store
-    ```
+ ```bash
+ $ cd /home/model-server/model-store
+ ```
 
-2. 下载一个模型.
+3. 下载一个模型.
 
-    ```bash
-    $ apt-get update  
-    $ apt-get install wget
-    $ wget https://download.pytorch.org/models/densenet161-8d451a50.pth
-    ```
+ ```bash
+ $ apt-get update  
+ $ apt-get install wget
+ $ wget https://download.pytorch.org/models/densenet161-8d451a50.pth
+ ```
 
-    返回结果：
-    ```
-    20xx-0x-0x 05:13:05 (84.6 MB/s) - 'densenet161-8d451a50.pth' saved [115730790/115730790]
-    ```
+ 返回结果：
+ ```
+ 20xx-0x-0x 05:13:05 (84.6 MB/s) - 'densenet161-8d451a50.pth' saved [115730790/115730790]
+ ```
 
-3. 使用model archiver进行模型归档. The `extra-files` param uses fa file from the `TorchServe` repo, so update the path if necessary.
-    安装：
-    ```
-    $ cd /serve/model-archiver
-    $ pip install .
-    ```
+4. 使用model archiver进行模型归档. The `extra-files` param uses fa file from the `TorchServe` repo, so update the path if necessary.
 
-    ```bash
-    $ torch-model-archiver --model-name densenet161 --version 1.0 --model-file /serve/examples/image_classifier/densenet_161/model.py --serialized-file /home/model-server/model-store/densenet161-8d451a50.pth --export-path /home/model-server/model-store --extra-files /serve/examples/image_classifier/index_to_name.json --handler image_classifier
-    ```
+安装：
+ ```
+ $ cd /serve/model-archiver
+ $ pip install .
+ ```
+ 执行命令：
+ ```bash
+ $ torch-model-archiver --model-name densenet161 --version 1.0 --model-file /serve/examples/image_classifier/densenet_161/model.py --serialized-file /home/model-server/model-store/densenet161-8d451a50.pth --export-path /home/model-server/model-store --extra-files /serve/examples/image_classifier/index_to_name.json --handler image_classifier
+ ```
 
-    成功后可以看到mar文件：
-    ```
-    # 执行ls
-    densenet161-8d451a50.pth  densenet161.mar
-    ```
+ 成功后可以看到mar文件，执行ls：
+ ```
+ $ ls  /home/model-server/model-store/
+ densenet161-8d451a50.pth  densenet161.mar
+ ```
 
-##### 启动TorchServe进行推理模型
+5. 启动TorchServe进行推理模型
 
-After you archive and store the model, use the `torchserve` command to serve the model.
-
+当已经归档和存储了模型，使用`torchserve`命令进行模型推理。
 关闭之前的如果已经启动的TorchServe
 ```
 $ torchserve --stop
 ```
 
-如果停止成功：
+如果停止成功，会看到日志：
 ```
 TorchServe has stopped.
 ```
 
 ```bash
+$ cd /home/model-server/
 $ torchserve --start --ncs --model-store model-store --models densenet161.mar
 ```
 
@@ -224,7 +245,7 @@ e89a,timestamp:1591593790
 2020-06-08 05:23:10,362 [INFO ] W-9006-densenet161_1.0 TS_METRICS - W-9006-densenet161_1.0.ms:6832|#Level:Host|#hostname:7d3f0e9be89a,timestamp:1591593790
 ```
 
-##### 使用模型进行推理
+6. 使用模型进行推理
 
 为了测试模型服务，发送请求到服务器的`predictions` API.
 
@@ -237,7 +258,7 @@ e89a,timestamp:1591593790
 
 下面的代码完成了所有的三个步骤
 
-在主机客户端执行以下命令：
+在主机开启新的会话，执行以下命令：
 
 ```bash
 $ curl -O https://s3.amazonaws.com/model-server/inputs/kitten.jpg
@@ -266,5 +287,8 @@ $ curl -X POST http://127.0.0.1:8080/predictions/densenet161 -T kitten.jpg
 ]
 ```
 
-请同学参考以上步骤，进行自己的模型的服务部署，并返回推理请求的结果截图。
 
+
+#### 本节作业
+
+请同学参考以上步骤，进行自己的模型的服务部署，并返回推理请求的结果截图。
