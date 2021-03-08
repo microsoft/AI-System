@@ -91,26 +91,20 @@ Successfully tagged train_dl:latest
 
 ```
 ...
-Train Epoch: 1 [49920/60000 (83%)]      Loss: 0.195172
-Train Epoch: 1 [50560/60000 (84%)]      Loss: 0.052903
-Train Epoch: 1 [51200/60000 (85%)]      Loss: 0.262594
-Train Epoch: 1 [51840/60000 (86%)]      Loss: 0.066995
-Train Epoch: 1 [52480/60000 (87%)]      Loss: 0.022450
-Train Epoch: 1 [53120/60000 (88%)]      Loss: 0.239718
-Train Epoch: 1 [53760/60000 (90%)]      Loss: 0.152097
-Train Epoch: 1 [54400/60000 (91%)]      Loss: 0.047996
-Train Epoch: 1 [55040/60000 (92%)]      Loss: 0.250904
-Train Epoch: 1 [55680/60000 (93%)]      Loss: 0.048776
-Train Epoch: 1 [56320/60000 (94%)]      Loss: 0.090460
-Train Epoch: 1 [56960/60000 (95%)]      Loss: 0.088897
-Train Epoch: 1 [57600/60000 (96%)]      Loss: 0.124534
-Train Epoch: 1 [58240/60000 (97%)]      Loss: 0.144476
+Train Epoch: 1 [31360/60000 (52%)]      Loss: 0.106258
+Train Epoch: 1 [32000/60000 (53%)]      Loss: 0.038731
+Train Epoch: 1 [32640/60000 (54%)]      Loss: 0.093579
+Train Epoch: 1 [33280/60000 (55%)]      Loss: 0.058011
+Train Epoch: 1 [33920/60000 (57%)]      Loss: 0.050009
+Train Epoch: 1 [34560/60000 (58%)]      Loss: 0.197533
+Train Epoch: 1 [35200/60000 (59%)]      Loss: 0.042063
+Train Epoch: 1 [35840/60000 (60%)]      Loss: 0.033598
 ...
 ```
 
 - 执行`docker ps`检查是否当前容器已经启动。
 
-- 最终清理容器，如果创建时附件参数` --rm`你只需要停止所有正在运行的容器。`docker stop <container-name>`之后它们会自动删除自己。
+- 最终清理容器，如果创建执行`docker run`时附件参数`--rm`你只需要停止所有正在运行的容器。`docker stop <container-name>`之后它们会自动删除自己。也可以通过`docker rm <container-name/id>`删除容器。
 
 ---
 
