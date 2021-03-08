@@ -4,10 +4,11 @@
 ### 准备TorchServe源码:
 ```bash
 # $BRANCH_NAME可以指定需要使用的版本
+$ BRANCH_NAME=v0.1.0
 $ rm -rf serve
 $ git clone https://github.com/pytorch/serve.git
 $ cd serve
-$ git checkout $BRANCH_NAME
+$ git checkout -b $BRANCH_NAME
 $ cd ..
 ```
 
@@ -51,7 +52,7 @@ $ docker run --rm -it -p 8080:8080 -p 8081:8081 torchserve:0.1-cpu
 root@d73100253567:/#
 ```
 
-对官方最新的版本，你可以使用`latest`标签:
+如果想使用官方最新版本的镜像，你可以使用`latest`标签:
 
 ```
 $ docker run --rm -it -p 8080:8080 -p 8081:8081 pytorch/torchserve:latest
@@ -59,13 +60,13 @@ $ docker run --rm -it -p 8080:8080 -p 8081:8081 pytorch/torchserve:latest
 
 #### 启动GPU容器
 
-如果想用特定的版本，可以传递特定的标签确定使用(ex: 0.1-cuda10):
+如果想用特定的版本，可以传递特定的标签确定使用(e.g., 0.1-cuda10):
 
 ```bash
 $ docker run --rm -it --gpus all -p 8080:8080 -p 8081:8081 pytorch/torchserve:0.1-cuda10.1-cudnn7-runtime
 ```
 
-对最新的官方版本，你可以使用`gpu-latest`标签:
+对最新的官方版本镜像，你可以使用`gpu-latest`标签:
 
 ```bash
 $ docker run --rm -it --gpus all -p 8080:8080 -p 8081:8081 pytorch/torchserve:latest-gpu

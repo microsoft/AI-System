@@ -52,7 +52,7 @@ Successfully built 7e69d61fd488
 - 经过上面的操作，你已经具备构建了一个打包你的应用代码的镜像的前置条件。接下来我们通过下面的命令去构建Docker镜像：
 
 ```sh
-docker build -f Dockerfile.cpu -t train_dl .
+docker build -f Dockerfile.gpu -t train_dl .
 ```
 
 `docker build` : 通过Dockerfile进而构建镜像的命令。
@@ -65,7 +65,7 @@ docker build -f Dockerfile.cpu -t train_dl .
 
 ` -f ` : 指定构建进镜像中的Dockerfile。
 
-` Dockerfile.cpu` : 构建进镜像中的Dockerfile的文件名，如果希望镜像使用GPU，可以用Dockerfile.gpu文件。
+` Dockerfile.gpu` : 构建进镜像中的Dockerfile的文件名，如果机器没有GPU，可以用Dockerfile.cpu文件。
 
 
 - 用户可以通过命令`docker images`查看本地镜像
