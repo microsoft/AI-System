@@ -46,6 +46,8 @@ RUN update-alternatives --install /usr/local/bin/pip pip /usr/local/bin/pip3 1
 RUN export USE_CUDA=1
 RUN pip install psutil future torch torchvision torchtext
 RUN pip install --no-cache-dir psutil
+RUN pip install --no-cache-dir captum
+
 ADD serve serve
 RUN pip install ../serve/
 
