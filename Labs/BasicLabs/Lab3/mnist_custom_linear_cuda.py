@@ -40,7 +40,7 @@ from torchvision import datasets, transforms
 from torch.optim.lr_scheduler import StepLR
 
 #import our cuda module
-import mylinear_cpp
+#import mylinear_cpp
 import mylinear_cuda
 
 class myLinearFunction(torch.autograd.Function):
