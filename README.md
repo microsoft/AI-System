@@ -58,7 +58,7 @@
 |5|分布式训练算法|数据并行，模型并行，分布式SGD <br>论文和系统：PipeDream|
 |6|分布式训练系统|MPI, parameter servers, all-reduce, RDMA <br>论文和系统: Horovod|
 |7|异构计算集群调度与资源管理系统|集群上运行DNN任务：容器，资源分配，调度 <br>论文和系统：Kubeflow, OpenPAI, Gandiva, HiveD|
-|8|深度学习推导系统|效率，延迟，吞吐量，部署 <br>论文和系统：TensorRT, TensorflowLite, ONNX|
+|8|深度学习推导系统|效率，延迟，吞吐量，部署 <br>论文和系统：TensorRT, TensorFlowLite, ONNX|
 ||||
 
 *高阶课程*
