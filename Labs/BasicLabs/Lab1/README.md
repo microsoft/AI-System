@@ -27,7 +27,7 @@
 
 ### 具体步骤
 
-1.	按装依赖包。PyTorch==1.5, TensorFlow>=1.15.0
+1.	安装依赖包。PyTorch==1.5, TensorFlow>=1.15.0
 
 2.	下载并运行PyTorch仓库中提供的MNIST样例程序。
 
