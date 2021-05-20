@@ -9,6 +9,7 @@
 Docker的官方文档中的*getting started*有关于不同操作系统的Docker细节配置方法
 
 * [Linux](https://docs.docker.com/engine/installation/linux/)
+  * [Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 * [Mac](https://docs.docker.com/docker-for-mac/)
 * [Windows](https://docs.docker.com/docker-for-windows/)
 

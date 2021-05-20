@@ -34,7 +34,7 @@ CMD [ "python", "pytorch_mnist_basic.py" ]
 
 ```
 
-- 当Docker文件准备好，可以通过命令 `docker build -t train_dl .`构建镜像
+- 当Docker文件准备好，可以通过命令 `docker build -t train_dl .`构建镜像 
 
 ---
 
@@ -49,10 +49,10 @@ Successfully built 7e69d61fd488
 
 ## 构建Docker镜像
 
-- 经过上面的操作，你已经具备构建了一个打包你的应用代码的镜像的前置国祚。接下来我们通过下面的命令去构建Docker镜像：
+- 经过上面的操作，你已经具备构建了一个打包你的应用代码的镜像的前置条件。接下来我们通过下面的命令去构建Docker镜像：
 
 ```sh
-docker build -f Dockerfile.cpu -t train_dl .
+docker build -f Dockerfile.gpu -t train_dl .
 ```
 
 `docker build` : 通过Dockerfile进而构建镜像的命令。
@@ -62,6 +62,11 @@ docker build -f Dockerfile.cpu -t train_dl .
 `train_dl` : 给镜像打上的标签名字。
 
 ` . ` : 希望构建进镜像中的Dockerfile的相对路径。
+
+` -f ` : 指定构建进镜像中的Dockerfile。
+
+` Dockerfile.gpu` : 构建进镜像中的Dockerfile的文件名，如果机器没有GPU，可以用Dockerfile.cpu文件。
+
 
 - 用户可以通过命令`docker images`查看本地镜像
 
@@ -80,32 +85,26 @@ Successfully tagged train_dl:latest
 
 ## 启动所构建镜像的容器实例
 
-- 当前你的代码已经打包进镜像，并保存在本地机器。让我们通过下面的命令尝试启动它 `docker run --name training --rm train_dl`
+- 当前你的代码已经打包进镜像，并保存在本地机器。让我们通过下面的命令尝试启动它 `docker run --name training train_dl`
 
 成功会观察到日志：
 
 ```
 ...
-Train Epoch: 1 [49920/60000 (83%)]      Loss: 0.195172
-Train Epoch: 1 [50560/60000 (84%)]      Loss: 0.052903
-Train Epoch: 1 [51200/60000 (85%)]      Loss: 0.262594
-Train Epoch: 1 [51840/60000 (86%)]      Loss: 0.066995
-Train Epoch: 1 [52480/60000 (87%)]      Loss: 0.022450
-Train Epoch: 1 [53120/60000 (88%)]      Loss: 0.239718
-Train Epoch: 1 [53760/60000 (90%)]      Loss: 0.152097
-Train Epoch: 1 [54400/60000 (91%)]      Loss: 0.047996
-Train Epoch: 1 [55040/60000 (92%)]      Loss: 0.250904
-Train Epoch: 1 [55680/60000 (93%)]      Loss: 0.048776
-Train Epoch: 1 [56320/60000 (94%)]      Loss: 0.090460
-Train Epoch: 1 [56960/60000 (95%)]      Loss: 0.088897
-Train Epoch: 1 [57600/60000 (96%)]      Loss: 0.124534
-Train Epoch: 1 [58240/60000 (97%)]      Loss: 0.144476
+Train Epoch: 1 [31360/60000 (52%)]      Loss: 0.106258
+Train Epoch: 1 [32000/60000 (53%)]      Loss: 0.038731
+Train Epoch: 1 [32640/60000 (54%)]      Loss: 0.093579
+Train Epoch: 1 [33280/60000 (55%)]      Loss: 0.058011
+Train Epoch: 1 [33920/60000 (57%)]      Loss: 0.050009
+Train Epoch: 1 [34560/60000 (58%)]      Loss: 0.197533
+Train Epoch: 1 [35200/60000 (59%)]      Loss: 0.042063
+Train Epoch: 1 [35840/60000 (60%)]      Loss: 0.033598
 ...
 ```
 
 - 执行`docker ps`检查是否当前容器已经启动。
 
-- 最终清理容器，如果创建时附件参数` --rm`你只需要停止所有正在运行的容器。`docker stop <container-name>`之后它们会自动删除自己。
+- 最终清理容器，如果创建执行`docker run`时附件参数`--rm`你只需要停止所有正在运行的容器。`docker stop <container-name>`之后它们会自动删除自己。也可以通过`docker rm <container-name/id>`删除容器。
 
 ---
 
@@ -131,6 +130,11 @@ Successfully tagged train_dl:latest
 
 例如：
 ```
+...
+9913344it [00:00, 25314349.44it/s]
+29696it [00:00, 760083.06it/s]
+1649664it [00:00, 6946540.85it/s]
+5120it [00:00, 35911097.79it/s]
 ...
 Train Epoch: 1 [49920/60000 (83%)]      Loss: 0.195172
 Train Epoch: 1 [50560/60000 (84%)]      Loss: 0.052903

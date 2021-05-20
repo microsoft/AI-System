@@ -47,6 +47,7 @@ RUN pip install --no-cache-dir psutil
 RUN pip install --no-cache-dir torch
 RUN pip install --no-cache-dir torchvision
 RUN pip install --no-cache-dir torchtext
+RUN pip install --no-cache-dir captum
 ADD serve serve
 RUN pip install ../serve/
 
