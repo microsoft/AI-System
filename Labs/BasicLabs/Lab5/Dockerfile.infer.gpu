@@ -32,7 +32,7 @@ RUN apt-get update && \
     dpkg-dev \
     g++ \
     python3-dev \
-    openjdk-8-jdk-headless \
+    openjdk-11-jdk \
     curl \
     vim \
     && rm -rf /var/lib/apt/lists/* \
