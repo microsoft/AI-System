@@ -102,6 +102,7 @@
 * [3. Docker部署PyTorch训练程序 - 内容，步骤，作业](./train.md)
 * [4. Docker部署PyTorch推理程序 - 内容，步骤，作业](./inference.md)
 * [5. 进阶学习](./extend.md)
+* [6. 常见问题](./issue.md)
 
 ## 参考资料
 
