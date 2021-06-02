@@ -10,4 +10,4 @@ E: The repository 'https://developer.download.nvidia.com/compute/machine-learnin
 ### 原因
 NVIDIA 的 CDN 更新了新的 GPG 签名缓存 `Release.gpg`，但对应的本体 `Release` 并未更新，这会造成上述错误。
 ### 解决方法
-解除 `Dockerfile.gpu` 内 `# 解决网络问题` 下命令的注释，令其运行将下载源换为 TUNA 与 Aliyun 源，可以解决问题。
+解除 `Dockerfile.gpu` 内 `# 解决网络问题` 下命令的注释，令其运行将下载源换为 Aliyun 源，可以解决问题。
