@@ -59,7 +59,7 @@ Lectures have two parts--basic courses and advanced courses. The first part is f
 |4|Computer architecture for Matrix computation|Matrix computation, CPU/SIMD, GPGPU, ASIC/TPU <br>Papers and systems: Blas, TPU|
 |5|Distributed training algorithms|Data parallelism, model parallelism, distributed SGD <br>Papers and systems: PipeDream|
 |6|Distributed training systems|MPI, parameter servers, all-reduce, RDMA <br>Papers and systems: Horovod|
-|7|Scheduling and resource management system|Running dnn job on cluster: container, resource allocation, scheduling <br>Papers and systems: Kubeflow, OpenPAI,Gandiva, HiveD|
+|7|Scheduling and resource management system|Running dnn job on cluster: container, resource allocation, scheduling <br>Papers and systems: Kubeflow, OpenPAI,Gandiva|
 |8|Inference systems|Efficiency, latency, throughput, and deployment <br>Papers and systems: TensorRT, TensorflowLite, ONNX|
 ||||
 
