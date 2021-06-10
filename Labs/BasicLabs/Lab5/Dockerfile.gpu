@@ -19,9 +19,14 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE
-
+    
 # 继承自哪个基础镜像
 FROM nvidia/cuda:10.1-cudnn7-devel
+
+# 修复网络问题
+# RUN apt-get update && apt-get install -y --no-install-recommends curl
+# RUN curl -fsSL https://mirrors.aliyun.com/nvidia-cuda/ubuntu1804/x86_64/7fa2af80.pub | apt-key add - 
+# RUN echo "deb https://mirrors.aliyun.com/nvidia-cuda/ubuntu1804/x86_64/ ./" > /etc/apt/sources.list.d/cuda.list
 
 # 创建镜像中的文件夹，用于存储新的代码或文件
 RUN mkdir -p /src/app
