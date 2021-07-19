@@ -87,7 +87,7 @@
     运行命令：
     ```
     cd mylinear_cpp_extension
-    python setup install --user
+    python setup.py install --user
     cd ..
     python mnist_custom_linear_cpp.py
     ```
