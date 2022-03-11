@@ -1,0 +1,11 @@
+---
+clusters:
+  cluster1:
+    node-counts: 100
+    node-spec:
+      gpu-spec: P100
+      gpu-count: 8
+jobs:
+  start-time: 2017-10-07 01:12:09
+  end-time: 2017-11-07 01:12:09
+  job-count: 1000
