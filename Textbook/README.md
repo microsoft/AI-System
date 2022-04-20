@@ -287,11 +287,11 @@
 
 1. 反馈
 
-    如果您对本模块内容有任何反馈，欢迎在 GitHub [Issues](https://github.com/microsoft/AI-System/issues) 模块中留言，我们会积极了解您的反馈，并尽量满足您的要求。
+    如果您对本模块内容有任何反馈，欢迎在 GitHub [Issues](https://github.com/microsoft/AI-System/issues)模块中留言，我们会积极了解您的反馈，并尽量满足您的要求。
 
 2. 贡献
 
-    如果您想向本模块提供任何有价值的教程内容，请 fork 本仓库到您自己的账号，编辑内容并提交 Pull Request，我们会及时审阅并处理。
+    如果您想向本模块提供任何有价值的教程内容，请fork本仓库到您自己的账号，编辑内容并提交 Pull Request，我们会及时审阅并处理。
 
     欢迎向本模块贡献有价值的内容。
 
