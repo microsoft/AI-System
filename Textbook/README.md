@@ -291,7 +291,12 @@
 
 2. 贡献
 
-    如果您想向本模块提供任何有价值的教程内容，请fork本仓库到您自己的账号，编辑内容并提交 Pull Request，我们会及时审阅并处理。
+    如果您想向本模块提供任何有价值的教程内容，请fork本仓库到您自己的账号，编辑内容并提交Pull Request，我们会及时审阅并处理。
+    
+    请参考如下流程：
+    - (1) [创建分支，书写内容，提交Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)。
+    - (2) [抄送审阅者](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review)。
+    - (3) [合并并删除分支](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges#squash-and-merge-your-pull-request-commits)。
 
     欢迎向本模块贡献有价值的内容。
 
