@@ -209,13 +209,14 @@
     - 8.1.1 对比推理与训练过程
     - 8.1.2 推理系统的优化目标与约束
   - [8.2 推理系统的低延迟优化](第8章-深度学习推理系统/8.2-推理系统的低延迟优化.md)
-    - 8.2.1 推理延迟
-    - 8.2.2 层间与张量融合
-    - 8.2.3 目标后端自动调优
-    - 8.2.4 内存分配策略调优
-    - 8.2.5 深度学习模型内存分配算法实验与模拟研究
-    - 8.2.6 低精度推理与精度校准
-    - 8.2.7 模型压缩
+    - 8.2.1 通过程序理解推理优化动机
+    - 8.2.2 推理延迟
+    - 8.2.3 层间与张量融合
+    - 8.2.4 目标后端自动调优
+    - 8.2.5 内存分配策略调优
+    - 8.2.6 深度学习模型内存分配算法实验与模拟研究
+    - 8.2.7 低精度推理与精度校准
+    - 8.2.8 模型压缩
   - [8.3 推理系统的高吞吐与高效率优化](第8章-深度学习推理系统/8.3-推理系统的高吞吐与高效率优化.md)
     - 8.3.1 推理系统的吞吐量
     - 8.3.2 加速器模型并发执行
@@ -245,8 +246,7 @@
 - [10. 强化学习系统](第10章-强化学习系统/10-前言.md)
   - 10.1 强化学习系统
     - 10.1.1 强化学习基本概念
-    - 10.1.2 强化学习和传统机器学习的关系
-    - 10.1.3 强化学习与自动机器学习的关系
+    - 10.1.2 强化学习和传统机器学习,自动机器学习的关系
   - 10.2 强化学习系统
     - 10.2.1 分布式强化学习算法
     - 10.2.2 分布式强化学习对框架的需求和挑战
@@ -291,7 +291,12 @@
 
 2. 贡献
 
-    如果您想向本模块提供任何有价值的教程内容，请fork本仓库到您自己的账号，编辑内容并提交 Pull Request，我们会及时审阅并处理。
+    如果您想向本模块提供任何有价值的教程内容，请fork本仓库到您自己的账号，编辑内容并提交Pull Request，我们会及时审阅并处理。
+    
+    请参考如下流程：
+    - (1) [创建分支，书写内容，提交Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)。
+    - (2) [抄送审阅者](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review)。
+    - (3) [合并并删除分支](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges#squash-and-merge-your-pull-request-commits)。
 
     欢迎向本模块贡献有价值的内容。
 
