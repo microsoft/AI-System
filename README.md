@@ -2,7 +2,7 @@
 
 [English](./README_en.md)
 
-本课程的中文名称设定为 **人工智能系统**，主要讲解支持人工智能的计算机系统设计，对应的英文课程名称为 **System for AI**。本课程中将交替使用一下词汇：**人工智能系统**，**AI-System** 和 **System for AI**。
+本课程的中文名称设定为 **人工智能系统**，主要讲解支持人工智能的计算机系统设计，对应的英文课程名称为 **System for AI**。本课程中将交替使用以下词汇：**人工智能系统**，**AI-System** 和 **System for AI**。
 
 本课程为[微软人工智能教育与共建社区](https://github.com/microsoft/ai-edu)中规划的人工智能相关教程之一，在[A-基础教程](https://github.com/microsoft/ai-edu/tree/master/A-%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B)模块下，课程编号和名称为 *A6-人工智能系统*。
 
