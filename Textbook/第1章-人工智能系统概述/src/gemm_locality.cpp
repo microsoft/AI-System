@@ -5,7 +5,6 @@ using namespace std;
 
 int main()
 {
-    cout<<"GEMM\n";
     int M = 3;
     int N = 3;
     int K = 3;
