@@ -75,8 +75,8 @@
 运行命令：
 ```
 cd mylinear_cuda_extension
-python setup install --user
-cd ..& python mnist_custom_linear_cuda.p
+python setup.py install --user
+cd .. && python mnist_custom_linear_cuda.py
 ```
 
 ## 参考资料
