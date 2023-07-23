@@ -29,6 +29,7 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 from __future__ import print_function
+from datetime import datetime
 import argparse
 import torch
 import torch.nn as nn
@@ -156,4 +157,7 @@ def main():
 
 
 if __name__ == '__main__':
+    start_time = datetime.datetime.now()
     main()
+    end_time = datetime.datetime.now()
+    print("Time taken to run the program: ", end_time - start_time)
