@@ -4,9 +4,9 @@
 
 This is an online AI System Course to help students learn the whole stack of systems that support AI, and practice them in the real projects. In this course, we will use terms **AI-System** and **System for AI** alternately. 
 
-This course is one of the AI-related course in [微软人工智能教育与共建社区](https://github.com/microsoft/ai-edu). Under the [A-基础教程](https://github.com/microsoft/ai-edu/tree/master/A-%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B) module. The course numbe an name are *A6-人工智能系统*.
+This course is one of the AI-related course in [微软人工智能教育与共建社区](https://github.com/microsoft/ai-edu). Under the [基础教程](https://github.com/microsoft/ai-edu/tree/master/%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B) module. The course numbe an name are *A6-人工智能系统*.
 
-Welcome to [A-基础教程](https://github.com/microsoft/ai-edu/tree/master/A-%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B) module to access more related content.
+Welcome to [基础教程](https://github.com/microsoft/ai-edu/tree/master/%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B) module to access more related content.
 
 It is strongly recommended that learners who want to learn or consolidate the core knowledge of artificial intelligence, first learn [A2-神经网络基本原理简明教程](https://aka.ms/beginnerAI)，also known as the **9-step learn Neural Network**。It will bring great help to the study of this course.
 
